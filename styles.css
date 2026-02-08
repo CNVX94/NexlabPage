@@ -1,16 +1,16 @@
 :root {
     /* Palette - Pastel & Friendly */
-    --bg-color: hsl(25, 100%, 96%);
+    --bg-color: hsl(287, 82%, 80%);
     /* Very pale warm white/cream */
     --text-color: #4A4A4A;
     /* Soft dark gray */
     --primary-color: #FF9AA2;
     /* Pastel Pink/Salmon */
-    --secondary-color: #B5EAD7;
+    --secondary-color: #93e9c9;
     /* Pastel Mint */
-    --accent-blue: #C7CEEA;
+    --accent-blue: #9faee7;
     /* Pastel Blue/Lavender */
-    --accent-yellow: #FFDAC1;
+    --accent-yellow: #ef8bf0;
     /* Pastel Peach/Yellow */
 
     /* Text readability border */
@@ -20,7 +20,7 @@
     /* Night Mode Variables (Default Light) */
     --toggle-icon: "🌙";
 
-    --card-bg: #FFFFFF;
+    --card-bg: #ffffffb8;
     --card-shadow: 0 10px 30px rgba(255, 154, 162, 0.15);
     /* Soft pinkish shadow */
     --card-hover-shadow: 0 15px 40px rgba(255, 154, 162, 0.25);
@@ -183,7 +183,7 @@ ul {
 .btn-nav:hover,
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 154, 162, 0.6);
+    box-shadow: 0 6px 20px rgba(255, 140, 150, 0.6);
     background: linear-gradient(135deg, #FFB7B2, var(--primary-color));
 }
 
@@ -219,8 +219,9 @@ ul {
 }
 
 .hero-content p {
+    /* Texto de la hero - color oscuro */
     font-size: 1.25rem;
-    color: #666;
+    color: #000000;
     margin-bottom: 2.5rem;
     max-width: 500px;
 }
@@ -289,7 +290,7 @@ ul {
 
 .bottom {
     transform: rotateX(-90deg) translateZ(100px);
-    background: #FFDAC1;
+    background: #f2ba94;
 }
 
 @keyframes rotate {
@@ -360,7 +361,7 @@ ul {
 
 .card-icon {
     font-family: var(--font-heading);
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 1.2rem;
     font-weight: bold;
     margin-bottom: 1.5rem;
