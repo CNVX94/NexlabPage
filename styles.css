@@ -52,12 +52,12 @@ body {
 
 /* Night Mode Styles */
 body.night-mode {
-    --bg-color: #23232e;
-    /* Dark Navy Background */
+    --bg-color: #050510;
+    /* Deep Rich Night */
     --text-color: #e0e0e0;
     /* Light Gray Text */
-    --card-bg: #2a2a35;
-    /* Slightly lighter dark for cards */
+    --card-bg: #121220;
+    /* Deep Blue/Purple Tint for cards */
     --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     --card-hover-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
     --primary-color: #FFB7B2;
@@ -120,6 +120,11 @@ ul {
     z-index: 1000;
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+body.night-mode .header {
+    background-color: rgba(5, 5, 16, 0.95);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
 .header-container {
@@ -221,7 +226,7 @@ ul {
 .hero-content p {
     /* Texto de la hero - color oscuro */
     font-size: 1.25rem;
-    color: #000000;
+    color: var(--text-color);
     margin-bottom: 2.5rem;
     max-width: 500px;
 }
@@ -322,9 +327,13 @@ ul {
 
 /* About */
 .about {
-    background-color: white;
+    background-color: rgb(253, 220, 220);
     border-radius: 50px;
     margin: 2rem;
+}
+
+body.night-mode .about {
+    background-color: var(--card-bg);
 }
 
 .about-content {
@@ -421,8 +430,12 @@ ul {
     text-align: center;
     margin-top: 4rem;
     padding: 6rem 0;
-    background: linear-gradient(135deg, #FFF0F5 0%, #E0F7FA 100%);
+    background: linear-gradient(135deg, #ffbad1 0%, #b1f6ff 100%);
     border-radius: 50px 50px 0 0;
+}
+
+body.night-mode .cta {
+    background: linear-gradient(135deg, #0f0f1a 0%, #151525 100%);
 }
 
 .cta h2 {
@@ -439,6 +452,11 @@ ul {
     text-align: center;
     color: #888;
     font-size: 0.95rem;
+}
+
+body.night-mode .footer {
+    background-color: #050510;
+    color: #888;
 }
 
 /* Responsive */
