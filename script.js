@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Dynamic 3D effect on mouse move for hero (Subtle parallax)
     const hero = document.querySelector('.hero');
-    const cube = document.querySelector('.cube-container');
+    const cube = document.querySelector('.cube');
 
     if (hero && cube) {
         hero.addEventListener('mousemove', (e) => {
@@ -52,6 +52,31 @@ document.addEventListener('DOMContentLoaded', () => {
         // Reset on mouse leave
         hero.addEventListener('mouseleave', () => {
             cube.style.transform = `rotateY(0deg) rotateX(0deg)`;
+        });
+    }
+
+
+    // Night Mode Toggle
+    const toggleButton = document.getElementById('night-mode-toggle');
+    const body = document.body;
+
+    // Check for saved preference
+    if (localStorage.getItem('night-mode') === 'enabled') {
+        body.classList.add('night-mode');
+        if (toggleButton) toggleButton.textContent = '☀️';
+    }
+
+    if (toggleButton) {
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('night-mode');
+
+            if (body.classList.contains('night-mode')) {
+                localStorage.setItem('night-mode', 'enabled');
+                toggleButton.textContent = '☀️'; // Sun icon for light mode
+            } else {
+                localStorage.setItem('night-mode', 'disabled');
+                toggleButton.textContent = '🌙'; // Moon icon for night mode
+            }
         });
     }
 });
