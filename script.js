@@ -60,6 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleButton = document.getElementById('night-mode-toggle');
     const body = document.body;
 
+    // Mobile Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.nav');
+
     // Check for saved preference
     if (localStorage.getItem('night-mode') === 'enabled') {
         body.classList.add('night-mode');
@@ -77,6 +81,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 localStorage.setItem('night-mode', 'disabled');
                 toggleButton.textContent = '🌙'; // Moon icon for night mode
             }
+        });
+    }
+
+    if (menuToggle && nav) {
+        menuToggle.addEventListener('click', () => {
+            const isOpen = nav.classList.toggle('is-open');
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+            menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+        });
+
+        nav.querySelectorAll('a[href^="#"]').forEach(link => {
+            link.addEventListener('click', () => {
+                nav.classList.remove('is-open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+                menuToggle.setAttribute('aria-label', 'Abrir menú');
+            });
         });
     }
 });
